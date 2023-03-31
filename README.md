@@ -2,7 +2,7 @@
 
 # Sample Hardhat-Foundry Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+this project integrated hardhat and foundry as a template to fastly create a project.
 
 ## Getting Started
 
@@ -10,6 +10,14 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
 npm install
 forge install
 ```
+
+## Config `.env`
+
+```
+cp .env.example .env
+```
+
+replace configs in `.env` file
 
 ## Run test
 
@@ -43,6 +51,7 @@ forge remappings > remappings.txt
 - [solidity-coverage](https://www.npmjs.com/package/solidity-coverage): Code coverage for Solidity testing
 - [hardhat-gas-reporter](https://www.npmjs.com/package/hardhat-gas-reporter): A Mocha reporter for Ethereum test suites or use`REPORT_GAS=true npx hardhat test` instead
 - [@nomiclabs/hardhat-etherscan](https://www.npmjs.com/package/@nomiclabs/hardhat-etherscan): Hardhat plugin for integration with Etherscan's contract verification service.
+- [hardhat-deploy](https://github.com/wighawag/hardhat-deploy): A Hardhat Plugin For Replicable Deployments And Easy Testing
 
 ### Template
 
