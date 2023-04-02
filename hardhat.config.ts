@@ -23,6 +23,11 @@ const config: HardhatUserConfig = {
     hardhat: {
       chainId: 1337,
     },
+    sepolia: {
+      url: `https://sepolia.infura.io/v3/${process.env.INFURA_KEY}`,
+      chainId: 11155111,
+      accounts,
+    },
     "bsc-mainnet": {
       url: "https://rpc.ankr.com/bsc",
       chainId: 56,
