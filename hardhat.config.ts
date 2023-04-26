@@ -4,8 +4,10 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "@nomicfoundation/hardhat-foundry";
 import "@nomiclabs/hardhat-etherscan";
+import "hardhat-deploy";
 
 import "./tasks";
+import getNetworks from "./networks";
 
 const accounts = process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [""];
 
@@ -19,16 +21,10 @@ const config: HardhatUserConfig = {
       },
     },
   },
-  networks: {
-    hardhat: {
-      chainId: 1337,
-    },
-    "bsc-mainnet": {
-      url: "https://rpc.ankr.com/bsc",
-      chainId: 56,
-      accounts: accounts,
-    },
+  namedAccounts: {
+    deployer: process.env.DEPLOYER || "",
   },
+  networks: Object.assign({}, getNetworks(accounts), {}),
   etherscan: {
     apiKey: {
       mainnet: process.env.ETHERSCAN_API_KEY || "",
