@@ -13,3 +13,6 @@ artifacts
 lib/
 out/
 cache_forge/
+
+# logs
+logs/

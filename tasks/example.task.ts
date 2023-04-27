@@ -1,8 +1,9 @@
 import { task } from "hardhat/config";
+import logger from "../logger";
 
 /**
  * @dev run npx hardhat taskExample --help to check params
- * @example npx hardhat taskExample --account 0x0000000000000000000000000000000000000000 --greeting "hahaha"
+ * @example npx hardhat taskExample --account 0x0000000000000000000000000000000000000000 --greeting "example task"
  */
 task("taskExample", "get current signer address")
   .addParam("account", "input task params from cli")
@@ -12,9 +13,8 @@ task("taskExample", "get current signer address")
     const { ethers } = hre;
     const signers = await ethers.getSigners();
     if (signers.length > 0) {
-      console.log("current signer", signers[0].address);
+      logger.info(`current signer: ${signers[0].address}`);
     }
 
-    console.log({ taskArguments });
-    // console.log({ taskArguments, hre, runSuper });
+    logger.info(JSON.stringify(taskArguments));
   });

@@ -3,9 +3,9 @@ import { task } from "hardhat/config";
 /**
  * useage example
  * 1. npx hardhat compile
- * 2. npx hardhat getSighash --contract Lock
+ * 2. npx hardhat 4byte --contract Lock
  */
-task("getSighash", "get sighash of errors and functions")
+task("4byte", "get sighash of errors and functions")
   .addParam("contract", "contract name")
   .setAction(async (taskArguments, hre) => {
     const contract = await hre.ethers.getContractFactory(
