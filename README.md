@@ -2,6 +2,8 @@
 
 # Sample Hardhat-Foundry Project
 
+> node version >= 16
+
 this project integrated hardhat and foundry as a template to fastly create a project.
 
 ## Getting Started
