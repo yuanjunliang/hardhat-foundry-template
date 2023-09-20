@@ -8,6 +8,8 @@ this project integrated hardhat and foundry as a template to fastly create a pro
 
 ## Getting Started
 
+> suggest to use pnpm
+
 ```
 npm install
 forge install
@@ -35,6 +37,12 @@ forge test
 npx hardhat test
 ```
 
+## Check hardhat-verify support network list
+
+```
+npx hardhat verify --list-networks
+```
+
 ## Notice
 
 Whenever you install new libraries using Foundry, make sure to update your remappings.txt file by running forge `remappings > remappings.txt`
@@ -43,6 +51,14 @@ Whenever you install new libraries using Foundry, make sure to update your remap
 
 ```
 forge remappings > remappings.txt
+```
+
+## common commands
+
+1. verify contract
+
+```
+npx hardhat verify --network goerli contractAddress params1 params2 ...
 ```
 
 ## Recommend resource

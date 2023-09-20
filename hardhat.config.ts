@@ -22,7 +22,14 @@ const config: HardhatUserConfig = {
   namedAccounts: {
     deployer: process.env.DEPLOYER || "",
   },
-  networks: Object.assign({}, networks, {}),
+  networks: Object.assign({}, networks, {
+    // hardhat: {
+    //   forking: {
+    //     url: "",
+    //     blockNumber: 1
+    //   }
+    // }
+  }),
   etherscan: {
     apiKey: {
       mainnet: process.env.ETHERSCAN || "",
@@ -32,8 +39,19 @@ const config: HardhatUserConfig = {
       arbitrumGoerli: process.env.ETHERSCAN_ARB || "",
       baseGoerli: process.env.ETHERSCAN_BASE || "",
       bscTestnet: process.env.ETHERSCAN_BSC || "",
-      polygon: process.env.ETHERSCAN_POLYGON || ""
+      polygon: process.env.ETHERSCAN_POLYGON || "",
+      "linea-testnet": process.env.ETHERSCAN_LINEA || ""
     },
+    customChains: [
+      {
+        network: "linea-testnet",
+        chainId: 59140,
+        urls: {
+          apiURL: "https://api-testnet.lineascan.build/api",
+          browserURL: "	https://goerli.lineascan.build"
+        }
+      }
+    ]
   },
 };
 
